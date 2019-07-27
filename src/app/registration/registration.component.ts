@@ -19,9 +19,9 @@ export class RegistrationComponent implements OnInit {
 
   myEvent() {
     console.log(this.name + this.password);
-    this.userService.getUser().subscribe(
+    this.userService.getUser(this.name, this.password).subscribe(
       user => {
-        if(this.name === user.valueOf().name && this.password === user.valueOf().password) {
+        if(this.name === user.valueOf().username && this.password === user.valueOf().password) {
           this.router.navigate(['main']);
         } else {
           alert('Неправильный логин или пароль');

@@ -13,13 +13,15 @@ import {CurrencyService} from './service/currency.service';
 import {UserService} from './service/user.service';
 import {VacancyService} from './service/vacancy.service';
 import {ResumeService} from './service/resume.service';
+import { InputComponent } from './input/input.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    MainComponent
+    MainComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
