@@ -4,6 +4,13 @@
       <div class="col-sm-2"></div>
       <div class="col-sm-8">
 
+        <div *ngIf="!flag" [style.color]="'red'">
+          Для вас в этом месяце предусмотрена плановая проверка
+        </div>
+
+        <div *ngIf="flag" [style.color]="'green'">
+          Для вас в этом месяце не предусмотрена плановая проверка
+        </div>
 
       </div>
       <div class="col-sm-2"></div>
@@ -17,8 +24,8 @@
     <div  class="row text-center" style="margin-top: 30px">
       <!--<div class="col-sm-2">{{flag === false}}</div>-->
 
-      <div class="col-sm-2" *ngIf="!flag">
-        Hello world
+      <div class="col-sm-2">
+
       </div>
       <div class="col-sm-4">
         <button class="btn btn-lg btn-primary btn-block" (click)="rules()">Правила поведения</button>

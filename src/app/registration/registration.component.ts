@@ -35,7 +35,8 @@ export class RegistrationComponent implements OnInit {
         console.log(err);
       }
     );
-    // alert('HEllo --  ' + this.name);
-
+  }
+  reg(){
+    this.router.navigate(['reg']);
   }
 }
