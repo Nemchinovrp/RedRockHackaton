@@ -4,11 +4,11 @@
       <div class="col-sm-2"></div>
       <div class="col-sm-8">
 
-        <div *ngIf="!flag" [style.color]="'red'">
+        <div *ngIf="flag" [style.color]="'red'">
           Для вас в этом месяце предусмотрена плановая проверка
         </div>
 
-        <div *ngIf="flag" [style.color]="'green'">
+        <div *ngIf="!flag" [style.color]="'green'">
           Для вас в этом месяце не предусмотрена плановая проверка
         </div>
 
