@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {UserService} from '../service/user.service';
+import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class RegistrationComponent implements OnInit {
   name: string;
   password: string;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
   }
@@ -21,7 +22,9 @@ export class RegistrationComponent implements OnInit {
     console.log(this.name + this.password);
     this.userService.getUser(this.name, this.password).subscribe(
       user => {
-        if(this.name === user.valueOf().username && this.password === user.valueOf().password) {
+        if (this.name === user.valueOf().username && this.password === user.valueOf().password) {
+          // sessionStorage.setItem('user', user);
+          this.storage.set('user', user);
           this.router.navigate(['main']);
         } else {
           alert('Неправильный логин или пароль');

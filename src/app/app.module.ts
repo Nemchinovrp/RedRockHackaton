@@ -14,6 +14,7 @@ import {UserService} from './service/user.service';
 import {VacancyService} from './service/vacancy.service';
 import {ResumeService} from './service/resume.service';
 import { InputComponent } from './input/input.component';
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { InputComponent } from './input/input.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StorageServiceModule
   ],
   providers: [StorageService, CurrencyService, UserService, VacancyService, ResumeService],
   bootstrap: [AppComponent]
