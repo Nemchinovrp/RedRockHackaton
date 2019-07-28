@@ -12,4 +12,8 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
+  reg(){
+    alert('ЗАрегистрироваться');
+  }
+
 }
