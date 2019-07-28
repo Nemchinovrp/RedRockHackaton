@@ -7,7 +7,9 @@ export class ResumeService {
 
   constructor(private http: HttpClient) {}
 
-  getResume(): Observable<any> {
-    return this.http.get('http://localhost:8080/dynamic_all');
+  sendUser(login: String, password: String, name: String, email: String, inn: number, ogrn: number): Observable<any> {
+    console.log(login + ' ' + password);
+    const body = {username: login, password : password, name: name, email: email, inn: inn, ogrn: ogrn};
+    return this.http.post('http://localhost:8081/users', body);
   }
 }
