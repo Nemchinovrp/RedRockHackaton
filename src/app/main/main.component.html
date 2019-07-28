@@ -1,56 +1,38 @@
 <div class="row">
   <div class="col-12">
-    <div class="text-center">
-      <h3 style="margin-top: 20px">Динамика трудовых ресурсов</h3>
-    </div>
-    <div class="row" style="margin-top: 30px">
-      <div class="col-sm-2">{{flag === false}}</div>
+    <div  class="row text-center" style="margin-top: 30px">
+      <div class="col-sm-2"></div>
       <div class="col-sm-8">
+
 
       </div>
       <div class="col-sm-2"></div>
-
     </div>
 
   </div>
 </div>
 
-<!--<div class="row">-->
-  <!--<div class="col-12">-->
-    <!--<div class="text-center">-->
-      <!--<h3 style="margin-top: 80px">Прогрессивная конверсия вакансий/резюме</h3>-->
-      <!--<div class="row" style="margin-top: 20px">-->
-        <!--<div class="col-sm-2"></div>-->
-        <!--<div class="col-sm-8">-->
-          <!--<div class="text-center">-->
-            <!--<table class="table table-bordered" style="margin-top: 30px">-->
-              <!--<thead>-->
-              <!--<th>Категория</th>-->
-              <!--<th>2015</th>-->
-              <!--<th>2016</th>-->
-              <!--<th>2017</th>-->
-              <!--<th>2018</th>-->
-              <!--<th>2019</th>-->
-              <!--</thead>-->
-              <!--<tbody>-->
-              <!--<tr *ngFor="let hero of resumes">-->
-                <!--<td>{{hero.category}}</td>-->
-                <!--<td>{{hero.one}}</td>-->
-                <!--<td>{{hero.two}}</td>-->
-                <!--<td>{{hero.three}}</td>-->
-                <!--<td>{{hero.four}}</td>-->
-                <!--<td>{{hero.five}}</td>-->
-              <!--</tr>-->
-              <!--</tbody>-->
-            <!--</table>-->
-            <!--<div style="margin-top: 50px"><img src="assets/2.png"  width="1000" height="250"></div>-->
+<div class="row">
+  <div class="col-12">
+    <div  class="row text-center" style="margin-top: 30px">
+      <!--<div class="col-sm-2">{{flag === false}}</div>-->
 
-            <!--<div><h3 class="text-lg-right" style="margin-top: 50px">@Гусь и Калашников</h3></div>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-sm-2"></div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
+      <div class="col-sm-2" *ngIf="!flag">
+        Hello world
+      </div>
+      <div class="col-sm-4">
+        <button class="btn btn-lg btn-primary btn-block" (click)="rules()">Правила поведения</button>
+        <!--<button class="btn btn-lg btn-primary btn-block">Войти</button>-->
+      </div>
+
+      <div class="col-sm-4">
+        <button class="btn btn-lg btn-primary btn-block" (click)="warningg()">На что обратить внимание</button>
+        <!--<button class="btn btn-lg btn-primary btn-block">Войти</button>-->
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+  </div>
+</div>
+
 
