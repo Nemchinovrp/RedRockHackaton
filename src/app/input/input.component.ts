@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ResumeService} from '../service/resume.service';
-import {VacancyService} from '../service/vacancy.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-input',
@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
   private inn: number;
   private ogrn: number;
 
-  constructor(private resumeService: ResumeService) { }
+  constructor(private resumeService: ResumeService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,7 +25,7 @@ export class InputComponent implements OnInit {
       user => {
         console.log('Response registration: ');
         console.log('response - ' + user);
-        alert('Пользователь зарегистрован');
+        this.router.navigate(['registration']);
       },
       err => {
         console.log(err);
