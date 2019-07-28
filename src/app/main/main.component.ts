@@ -12,7 +12,7 @@ import {VacancyService} from '../service/vacancy.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  private user;
+  private flag: boolean;
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService, private vacancyService: VacancyService) {
   }
 
@@ -25,7 +25,8 @@ export class MainComponent implements OnInit {
     this.vacancyService.getInspection(data.id).subscribe(
       user => {
         console.log('Response: ');
-        console.log(user);
+        this.flag = user;
+        console.log('flag - ' + user);
       },
       err => {
         console.log(err);
