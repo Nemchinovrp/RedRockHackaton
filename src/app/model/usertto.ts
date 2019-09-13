@@ -1,8 +1,8 @@
 export class UserDto {
-  private login?: string;
-  private password?: string;
-  private name?: string;
-  private email?: string;
-  private inn?: number;
-  private ogrn?: number;
+  public login?: string;
+  public password?: string;
+  public name?: string;
+  public email?: string;
+  public inn?: number;
+  public ogrn?: number;
 }

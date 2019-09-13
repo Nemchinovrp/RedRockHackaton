@@ -12,7 +12,7 @@ import {VacancyService} from '../service/vacancy.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  private flag: boolean;
+  public flag: boolean;
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService, private vacancyService: VacancyService) {
   }
 

@@ -1,7 +1,12 @@
-FROM node:alpine
-LABEL maintainer="nemchinovrp@gmail.com"
-WORKDIR /usr/app/front
-EXPOSE 4200
-COPY ./ ./
-RUN npm install
-CMD ["npm", "start"]
+FROM node:alpine AS builder
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install && \
+    npm run build
+
+FROM nginx:alpine
+
+COPY --from=builder /app/dist/* /usr/share/nginx/html/
